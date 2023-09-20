@@ -3,8 +3,9 @@
 using namespace std ;
 class Solution {
 public:
+
     int minOperations(vector<int>& nums, int x) {
-        
+
       
         int totalSum = 0;
         for (int num : nums)
