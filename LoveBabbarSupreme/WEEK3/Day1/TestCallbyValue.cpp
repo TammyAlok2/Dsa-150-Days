@@ -3,6 +3,8 @@ using namespace std;
 
 void inc(int number)
 {
+
+    
 	number = number +10;
 	cout<<number<<endl;
 }
