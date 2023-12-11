@@ -1,0 +1,13 @@
+long maximumSumSubarray(int k, vector<int> &a , int n){
+        long long res = 0,sum=0;
+         for(int i=0;i<k;i++)
+          sum+=a[i];
+        res = max(sum,res);
+        for(int i=k;i<n;i++)
+        {
+            sum-=a[i-k];
+            sum+=a[i];
+            res = max(res,sum);
+        }
+        return res;
+    }
