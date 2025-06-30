@@ -13,7 +13,7 @@ public:
             while(count[num]-- > 0){
              result.push_back(num);
             }
-            count.erase(num); // already stored ko delete kar do
+         // already stored ko delete kar do
         }
         
         // arr2 ke bache huye elmenent ko store karna hai 
