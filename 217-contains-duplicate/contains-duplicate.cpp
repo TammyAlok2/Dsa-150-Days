@@ -1,16 +1,19 @@
 class Solution {
 public:
-   bool containsDuplicate(vector<int>& nums) {
-    unordered_set<int> seen;
+    bool containsDuplicate(vector<int>& nums) {
 
-  for(int num:nums){
-       if(seen.count(num)){
-        return true;
-       }    
-       seen.insert(num);
-  }
+        unordered_map<int,int>mp;
 
-    return false;
-}
+        for(int i =0;i<nums.size();i++){
+            mp[nums[i]]++;
+        }
 
+        for (auto it :mp){
+            if(it.second >1){
+                return true;
+            }
+        }
+        
+        return false;
+    }
 };
