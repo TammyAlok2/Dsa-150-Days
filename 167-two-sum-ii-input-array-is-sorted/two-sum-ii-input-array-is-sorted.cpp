@@ -1,23 +1,24 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& numbers, int target) {
-        // we use two pointer approach to solve this question 
-        int left = 0;
-        int right = numbers.size()-1;
 
-        while(left < right){
-            int sum = numbers[left]+ numbers[right];
+    // Pattern We need to solve using two pointers approach
+    int start = 0 ;
+    int end = numbers.size()-1;
 
-            if(sum == target){
-                return {left+1, right + 1};
-            }
-            else if(sum < target){
-                left++;
-            }
-            else {
-                right--;
-            }
+    while(start<=end){
+        if (numbers[start] + numbers[end] == target){
+            return {start+1,end+1};
         }
-        return {-1,-1};
+        else if(numbers[start] + numbers[end] < target){
+            start++;
+        }
+        else{
+            end--;
+        }
+    }
+
+    return{-1,-1};
+        
     }
 };
