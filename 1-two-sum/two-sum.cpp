@@ -1,20 +1,24 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        // storing all the value in the hashmap 
+        // optimal solution
+
         unordered_map<int,int>mp;
+        int n = nums.size();
 
-        for(int i =0;i<nums.size();i++){
-            int remaining = target-nums[i];
-            if(mp.find(remaining)!= mp.end()){
-                return {i,mp[remaining]};
+      
+
+        // now we stored it on the map now iterate it 
+        for(int i =0;i<n;i++){
+            int leftSum = target - nums[i];
+
+            // let's check it on the map
+            if(mp.find(leftSum) != mp.end()){
+                return {i,mp[leftSum]};
             }
-            mp[nums[i]]=i;
+            mp[nums[i]] = i;
+            
         }
-    
-
-
         return {-1,-1};
-        
     }
 };
